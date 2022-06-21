@@ -40,6 +40,16 @@ async function seed() {
     },
   });
 
+  await prisma.application.create({
+    data: {
+      title: "My first Application",
+      dob: "19/11/1969",
+      skill: ["Construction", "Carpentry"],
+      location: ["Singapore", "Australia"],
+      userId: user.id
+    },
+  });
+
   console.log(`Database has been seeded. 🌱`);
 }
 
